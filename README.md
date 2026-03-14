@@ -29,6 +29,12 @@ Traditional restaurants suffer from:
 - **Auto Invoicing** - Generate bills instantly
 - **Predictive Turnover** - AI estimates when tables free up
 
+## Design Prototype
+
+View the full UI/UX prototype for TableSync Pro in Figma:
+
+[🔗 Open Figma Prototype](https://tile-misty-47281548.figma.site/)
+
 ## Group Members
 
 - Klaudio Sula
