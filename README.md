@@ -44,3 +44,4 @@ View the full UI/UX prototype for TableSync Pro in Figma:
 - Rian Rada
 - Ensar Kraja
 - Erdin Mujaxhi
+.
