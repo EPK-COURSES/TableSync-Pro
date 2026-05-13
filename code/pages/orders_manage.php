@@ -1,2 +1,0 @@
-<?php
-// Orders management
