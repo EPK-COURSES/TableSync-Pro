@@ -1,47 +1,130 @@
-# TableSync Pro 
+# TableSync Pro
 
-**Restaurant Management System with Predictive Features**
+A web-based Restaurant Management System built as a Software Engineering course project.
 
-TableSync Pro solves slow manual restaurant operations by centralizing reservations, ordering, and billing into one digital platform. It eliminates table booking conflicts, enables phone-based ordering, and gives waitstaff real-time order visibility while managers get automated invoices and live table tracking.
 
-## Problem Solved
+**Live:** [m.1234.al](https://m.1234.al)
 
-Traditional restaurants suffer from:
-- Table booking conflicts and long wait times
-- Delayed ordering and poor staff coordination  
-- Manual billing and inefficient table turnover
+---
 
-**TableSync Pro fixes this** with predictive table turnover estimation, real-time sync across all users, and automated workflows.
+## What is it?
 
-## Users & Roles
+TableSync Pro is a multi-role restaurant management system that brings reservations, ordering, and billing into one place. It gives customers a way to book tables online, waitstaff a clean POS interface for managing orders, and managers full control over the menu, tables, and reports.
 
-| User | Key Responsibilities |
-|------|---------------------|
-| **Customer** | Reserve tables, pre-order, view invoices |
-| **Waitstaff** | Live orders, table status, mark served |
-| **Admin/Manager** | Menu setup, reports, full system control |
+---
 
-## Core Features
+## Why we built it
 
-- **Online Reservations** - Real-time table availability
-- **Digital Ordering** - Pre-order or at-table ordering  
-- **Live Dashboards** - Orders + status for all staff
-- **Auto Invoicing** - Generate bills instantly
-- **Predictive Turnover** - AI estimates when tables free up
+Most small restaurants still rely on phone calls, paper notes, and verbal communication between staff. This causes:
 
-## Design Prototype
+- Double-booked tables and reservation conflicts
+- Orders getting lost or delayed between the floor and the kitchen
+- Manual billing that is slow and error-prone
+- No easy way for managers to track what is happening in real time
 
-View the full UI/UX prototype for TableSync Pro in Figma:
+TableSync Pro tackles these problems with a role-based system, live order tracking, and automated workflows.
 
-[🔗 Open Figma Prototype](https://tile-misty-47281548.figma.site/)
+---
 
-## Group Members
+## User Roles
 
-- Klaudio Sula
-- Muhamed Tereziu
-- Kei Paravani
-- Kleo Kryemadhi
-- Rian Rada
-- Ensar Kraja
-- Erdin Mujaxhi
-.
+| Role | What they can do |
+|------|------------------|
+| **Customer** | Create and manage reservations, browse the menu, view booking history |
+| **Waiter** | Check in tables, create and update orders, generate invoices |
+| **Manager** | Manage menu items and tables, configure settings, view reports |
+
+---
+
+## Features
+
+- **Reservations** - Create, update, and cancel bookings with availability checks
+- **POS Order Entry** - Tablet-friendly split-screen interface for fast order input
+- **Order Tracking** - Live status updates: Pending, Preparing, Served
+- **Menu Management** - Add, edit, delete, and toggle menu item availability
+- **Table Management** - Set up tables by capacity and location, track occupancy
+- **Reports** - 14-day revenue overview, reservation stats, and top-selling items
+- **Access Control** - Session-based login with role-specific page restrictions
+
+---
+
+## Project Structure
+
+```
+project/
+├── assets/
+│   ├── style.css               # Global stylesheet
+│   └── app.js                  # Global client-side scripts
+├── config/
+│   └── db.php                  # PDO database connection
+├── includes/
+│   ├── auth.php                # Session guard + require_role()
+│   ├── logout.php              # Session termination and redirect
+│   ├── invoice_generate.php
+│   ├── forgot_password.php
+│   ├── turnover_prediction.php
+│   └── backup.php
+├── pages/
+│   ├── index.php               # Entry point, redirects by role
+│   ├── login.php
+│   ├── register.php
+│   ├── dashboard_customer.php
+│   ├── dashboard_waiter.php
+│   ├── dashboard_manager.php
+│   ├── orders_new.php
+│   ├── orders_active.php
+│   ├── orders_add_items.php
+│   ├── orders_cancel.php
+│   ├── orders_update_status.php
+│   ├── orders_manage.php
+│   ├── menu_manage.php
+│   ├── menu_search.php
+│   ├── reservations_create.php
+│   ├── reservations_history.php
+│   ├── reservations_cancel.php
+│   ├── reservations_update.php
+│   ├── reservations_manage.php
+│   ├── tables_status.php
+│   ├── tables_mark_occupied.php
+│   ├── settings.php
+│   └── reports.php
+└── schema.sql                  # Database schema and seed data
+```
+
+---
+
+## Demo Accounts
+
+All accounts use the password **`demo123`**.
+
+| Email | Role |
+|-------|------|
+| `customer@demo.local` | Customer |
+| `waiter@demo.local` | Waiter |
+| `manager@demo.local` | Manager |
+
+Quick-login buttons are available on the login page.
+
+---
+
+## Waiter Order Workflow
+
+1. **Check-In** - Mark a table as occupied when guests arrive
+2. **New Order** - Start an order for that table
+3. **Add Items** - Pick items from the menu using the POS card view
+4. **Update Status** - Move the order from Pending to Preparing to Served
+5. **Invoice** - Generate the bill, print it, and mark it as paid
+
+---
+
+## Team
+
+| Name |
+|------|
+| Klaudio Sula |
+| Muhamed Tereziu |
+| Kei Paravani |
+| Kleo Kryemadhi |
+| Rian Rada |
+| Ensar Kraja |
+| Erdin Mujaxhi |
